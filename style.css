@@ -39,6 +39,20 @@ html::-webkit-scrollbar-track{
 html::-webkit-scrollbar{
     background: var(--black);
 }
+.btn{
+   margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: rgb(109, 104, 104);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.btn:hover{
+    background-color: rgb(229, 52, 52);
+}
 .header .header-1{
     background: rgb(212, 200, 198);
     align-items: center;
@@ -112,14 +126,105 @@ html::-webkit-scrollbar{
     top:0;left:0;right: 0;
     z-index: 1000;
 }
-body{
-    height: 3000rem;
+.bottom-navbar{
+    text-align: center;
+    background-color: rgb(175, 159, 159);
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: none;
 }
 
+.bottom-navbar a{
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: var(--black);
+    text-decoration: none;
+}
+.bottom-navbar a:hover{
+    background-color: rgb(109, 104, 104);
+}
+.login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,.9);
+    position: fixed;
+    top: 0; right: -105%;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+.login-form-container.active{
+    
+    right: 0;
+}
+.login-form-container form{
+    background: #fff;
+    border: var(--border);
+    width: 40srem;
+    padding: 2rem;
+    box-shadow: 0.5rem;
+    margin: 2rem;
+}
+.login-form-container form h3{
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--black);
+}
+.login-form-container  span{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    display: block;
+    padding-top: 1rem;
+}
+.login-form-container form .box{
+    margin: 0.7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    text-transform: none;
+    width: 100%;
+}
+.login-form-container form .checkbox{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+.login-form-container form .checkbox label{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--black);
+}
+.login-form-container form  .btn{
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+.login-form-container form p{
+    padding-top: 0.8rem;
+    color:var(--black) ;
+    font-size: 1.5rem;
+}
+.login-form-container form p a{
+    color: rgb(229, 52, 52);
+    text-decoration: underline;
+}
+.login-form-container form p a:hover{
+    color: rgb(167, 39, 39);
+}
 
-
-
-
+.login-form-container #close-login-btn{
+    position: absolute;
+    top:1.5rem;right: 2.5rem;
+    font-size: 5rem;
+    color: #666;
+    cursor: pointer;
+}
 
 
 
@@ -141,6 +246,12 @@ body{
     .header .header-2{
         display: none;
     }
+    html{
+        scroll-padding-top: 0;
+    }
+    body{
+        padding-bottom: 6rem;
+    }
     #search-btn{
         display: inline-block;
     }
@@ -153,6 +264,9 @@ body{
         top:-115% ;right:2rem;
         width: 90%;
         box-shadow: var(--box-shadow);
+    }
+    .bottom-navbar{
+        display: block;
     }
 }
 .header .header-1 .search-form.active{
