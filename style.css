@@ -4,7 +4,7 @@
     --green:#27ae60;
     --dark-color:#219150;
     --black:#444;
-    --light-color:#666;
+    --light-color:#219150;
     --border:0.01rem solid  rgba(0,0,0.1);
     --border-hover:0.1rem solid var(--black);
     --box-shadow:0.05rem solid 1rem rgba(0,0,0,0.1);
@@ -25,7 +25,7 @@
 html{
     font-size: 62.5%;
     overflow-x: hidden;
-    scroll-padding-top: 5rem; /*maintain 5 rem at top of port/*
+    scroll-padding-top: 5rem; /*maintain 5 rem at top of port*/
     scroll-behavior: smooth;  /*it will behave smoothy*/
     
 }
@@ -39,6 +39,32 @@ html::-webkit-scrollbar-track{
 html::-webkit-scrollbar{
     background: var(--black);
 }
+section{
+    padding: 5rem 9%;
+}
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.heading::before{
+    content:'';
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0.01rem;
+    background-color: rgba(0,0,0,0.1);
+    z-index: -1;
+
+}
+.heading span{
+    font-size: 3rem;
+    padding: .5rem 2rem;
+    color: var(--black);
+    background: #fff;
+    border: var(--black);
+}
 .btn{
    margin-top: 1rem;
     display: inline-block;
@@ -48,13 +74,14 @@ html::-webkit-scrollbar{
     background: rgb(109, 104, 104);
     font-size: 1.7rem;
     cursor: pointer;
+    text-decoration: none;
     font-weight: 500;
 }
 .btn:hover{
     background-color: rgb(229, 52, 52);
 }
 .header .header-1{
-    background: rgb(212, 200, 198);
+    background: rgb(211, 64, 64);
     align-items: center;
     padding: 1.5rem 9%;
     display: flex;
@@ -65,7 +92,7 @@ html::-webkit-scrollbar{
     text-decoration: none;
     font-size: 2.5rem;
     font-weight: bolder;
-    color: var(--black);
+    color: rgb(46, 45, 45);
 }
 .header .logo i{
     color: purple;
@@ -73,12 +100,12 @@ html::-webkit-scrollbar{
 .header .search-form{
     width: 50rem;
     height: 5rem;
-    border: var(--border);
+    border:hidden;
     overflow: hidden;
     background: #fff;
     display: flex;
     align-items: center;
-    border-radius: .5rem;
+    border-radius: 1.5rem;
 }
 .header .header-1 .search-form input{
     font-size: 1.6rem;
@@ -109,7 +136,7 @@ html::-webkit-scrollbar{
 }
 .header-2 .navbar{
     text-align: center;
-    background-color:rgb(175, 159, 159);
+    background: rgba(223, 123, 123, 0.932);
 }
 .header-2 .navbar a{
     font-size: 1.7rem;
@@ -119,7 +146,8 @@ html::-webkit-scrollbar{
     color: rgb(138, 36, 36);
 }
 .header-2 .navbar a:hover{
-    background-color: rgb(109, 104, 104);
+    background-color: red;
+    color: white;
 }
 .header-2.actie{
     position: fixed;
@@ -154,6 +182,7 @@ html::-webkit-scrollbar{
     z-index: 10000;
     height: 100%;
     width: 100%;
+    transition: 0.3s;
 }
 .login-form-container.active{
     
@@ -162,7 +191,7 @@ html::-webkit-scrollbar{
 .login-form-container form{
     background: #fff;
     border: var(--border);
-    width: 40srem;
+    width: 40rem;
     padding: 2rem;
     box-shadow: 0.5rem;
     margin: 2rem;
@@ -225,6 +254,146 @@ html::-webkit-scrollbar{
     color: #666;
     cursor: pointer;
 }
+.home{
+    background: url(/Bookstore/photos/interior-of-modern-library-with-white-walls-wooden-floor-rows-of-bookcases-and-bookcases-3d-rendering-generative-ai-photo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem ;
+}
+.home .row .content{
+    flex: 1 1 42rem;
+}
+.home .row .book-slider{
+    flex: 1 1 42rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.home .row .book-slider a img{
+    height: 25rem;
+}
+.home .row .book-slider a:hover img{
+    transform: scale(0.9);
+}
+.home .row .book-slider .stand{
+    width: 100%;
+    margin-top: -2rem;
+}
+.home .row .content h3{
+    color: var(--black);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 1rem 0;
+}
+.icons-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap: 1.5rem;
+}
+.icons-container .icons{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+.icons-container .icons i{
+    font-size: 3.5rem;
+    color: rgb(229, 52, 52);
+}
+.icons-container .icons h3{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-bottom: 0.5rem;
+}
+.icons-container .icons p{
+    font-size: 1.4rem;
+    color: rgb(229, 52, 52);
+}
+.featured .featured-slider .box{
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border: var(--black);
+    text-align: center;
+}
+.featured .featured-slider .box:hover{
+    border: var(--border-hover);
+}
+.featured .featured-slider .box .image{
+    padding: 1rem;
+    background: linear-gradient(15deg,#eee 30%,#fff 30.1%);
+    
+}
+.featured .featured-slider .box:hover .image{
+    transform: translateY(6rem)
+}
+
+.featured .featured-slider .box .image img{
+    height: 25rem;
+}
+.featured .featured-slider .box .icons{
+    border-bottom: var(--border-hover);
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    z-index: 1;
+    transform: translateY(-100%);
+}
+.featured .featured-slider .box:hover .icons{
+    transform: translateY(0%);
+}
+.featured .featured-slider .box .icons a{
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: 1.3rem 1.5rem;
+    
+}
+.featured .featured-slider .box .icons a:hover{
+    background-color: rgb(229, 52, 52);
+    color:#fff;
+
+}
+
+.featured .featured-slider .box .content{
+    background: #eee;
+    padding: 1.5rem;
+}
+.featured .featured-slider .box .content h3{
+    font-size: 2rem;
+    color: black;
+}
+.featured .featured-slider .box .content .price{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-top: 1rem;
+}
+.featured .featured-slider .box .content .price span{
+    font-size: 1.5rem;
+    color: rgb(229, 52, 52);
+     text-decoration: line-through;
+}
+.swiper-button-next,
+.swiper-button-prev{
+    border: var(--border-hover);
+    height: 4rem;
+    width: 4rem;
+    color: var(--black);
+    background: #fff;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    font-size: 2rem;
+}
+.swiper-button-next:hover
+.swiper-button-prev:hover{
+    background: var(--black);
+    color: #fff;
+}
 
 
 
@@ -241,6 +410,10 @@ html::-webkit-scrollbar{
     .header .header-1{
         padding: 2rem;
     }
+    section{
+        padding: 3rem 2rem;
+    }
+    
 }
 @media(max-width:768px){
     .header .header-2{
@@ -269,9 +442,17 @@ html::-webkit-scrollbar{
         display: block;
     }
 }
+
 .header .header-1 .search-form.active{
     top:115%
 }
+.home .row .content{
+   text-align: center; 
+}
+.home .row .content h3{
+    font-size: 3.5rem;
+}
+
 @media(max-width:450px){
     html{
         font-size: 50%;
